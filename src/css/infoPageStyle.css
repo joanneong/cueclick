@@ -1,0 +1,105 @@
+/* -- Background image -- */
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*-- Align all contents to center -- */
+#center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -- CueClick Logo -- */
+#logo {
+    height: auto;
+}
+
+#para {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    color: grey;
+}
+
+/* -- Intructions --*/
+ol {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    color: white;
+}
+
+/* -- Relevant links -- */
+#links {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    text-align: right;
+}
+
+#links a {
+    margin-left: 1vw;
+}
+
+#links a:link {
+    color: grey;
+}
+
+#links a:visited {
+    color: grey;
+}
+
+#links a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* -- Portrait mode (where height > width) -- */
+@media screen and (orientation:portrait) {
+    #center {
+        width: 90%;
+    }
+
+    #logo {
+        width: 70%;
+    }
+
+    #para {
+        font-size: 3vw;
+    }
+
+    ol {
+        font-size: 3vw;
+    }
+
+    #links {
+        font-size: 2vw;
+        width: 80%;
+        margin-top: 5vw;
+    }
+}
+/* -- Landscape mode (where height < width) -- */
+@media screen and (orientation:landscape) {
+    #center {
+        width: 80%;
+    }
+
+    #logo {
+        width: 50%;
+    }
+
+    #para {
+        font-size: 1.5vw;
+    }
+
+    ol {
+        font-size: 1.5vw;
+    }
+
+    #links {
+        font-size: 1vw;
+        width: 80%;
+        margin-top: 3vw;
+    }
+}

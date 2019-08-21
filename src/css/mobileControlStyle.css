@@ -1,0 +1,55 @@
+/* -- Background image -- */
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* -- Instructions segment -- */
+#instructions {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#instructions p {
+    margin: 10%;
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    font-size: 6vw;
+    color: white;
+}
+
+/* -- Presenter note segment -- */
+#note {
+    display: none;
+    width: 80%;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#slide-no {
+    width: 100%;
+    height: 5%;
+    margin-bottom: 2%;
+    font-family: "Futura Bold", "Trebuchet MS", Arial, sans-serif;
+    font-size: 5vw;
+    color: white;
+}
+
+#script {
+    width: 100%;
+    height: 93%;
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    font-size: 5vw;
+    color: white;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}

@@ -1,0 +1,189 @@
+/* -- Background image -- */
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* -- Style for info button --*/
+#info-button {
+    width: 2.5%;
+    height: auto;
+    border: solid;
+    border-color: white;
+    border-width: 0.1vw;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 1.5%;
+    right: 1.5%;
+    text-decoration: none;
+}
+
+#info-button p {
+    font-family: "Futura Bold", "Trebuchet MS", Arial, sans-serif;
+    font-size: 1vw;
+    line-height: 0.3vw;
+    color: white;
+}
+
+#info-button:hover {
+    cursor: pointer;
+    border-color: yellow;
+}
+
+/* -- Login element -- */
+#center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    position: absolute;
+}
+
+/* -- CueClick Logo -- */
+#logo {
+    max-width: 90%;
+    width: 90%;
+    height: auto;
+    position: relative;
+}
+
+#para {
+    position: relative;
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    color: white;
+    font-size: 1.5vw;
+    height: auto;
+}
+
+/* -- Sign in button -- */
+#authorize-button {
+    margin-top: 3%;
+    position: relative;
+    width: 15%;
+    height: auto;
+    border: solid;
+    border-color: white;
+    border-width: 0.1vw;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#authorize-button p {
+    font-family: "Futura Bold", "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.5vw;
+    line-height: 0.3vw;
+    color: white;
+}
+
+#authorize-button:hover {
+    cursor: pointer;
+    border-color: yellow;
+}
+
+/* -- Style for side buttons -- */
+#side-buttons {
+    position: fixed;
+    bottom: 1.5%;
+    right: 1.5%;
+    width: 4.5vw;
+    height: 11vw;
+    display: none;
+}
+
+.s-button {
+    width: 4.5vw;
+    height: 4.5vw;
+    position: absolute;
+}
+
+.s-button:hover {
+    cursor: pointer;
+}
+
+/* -- New presentation button -- */
+#top-presentation {
+    display: none;
+    top: 0;
+    z-index: 2;
+}
+
+#bottom-presentation {
+    top: 0;
+    z-index: 1;
+}
+
+/* -- Sign out button -- */
+#top-button {
+    display: none;
+    bottom: 0;
+    z-index: 2;
+}
+
+#bottom-button {
+    bottom: 0;
+    z-index: 1;
+}
+
+/* -- Block including key, status, and iframe display -- */
+#slides {
+    display: none;
+}
+
+.top-bar-label {
+    font-family: "Futura Bold", "Trebuchet MS", Arial, sans-serif;
+    font-size: 100%;
+    line-height: 0.3vw;
+    color: white;
+}
+
+.box {
+    width: 50%;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin-left: 2.5%;
+    display: flex;
+    justify-content: center;
+}
+
+#key-and-status {
+    margin-bottom: 1%;
+}
+
+#key {
+    width: 50%;
+}
+
+#secret-box:hover {
+    cursor: pointer;
+}
+
+#secret {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    font-size: 100%;
+    color: white;
+    line-height: 0.3vw;
+}
+
+#status {
+    width: 40%;
+    margin-left: 5%;
+}
+
+#synced {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    font-size: 100%;
+    color: white;
+    line-height: 0.3vw;
+}
