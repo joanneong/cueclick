@@ -1,0 +1,40 @@
+/* -- Background image -- */
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* -- Title style -- */
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Futura Bold", "Trebuchet MS", Arial, sans-serif;
+    color: white;
+    font-size: 5vw;
+    width: 60%;
+    height: auto;
+}
+
+/* -- Title underline style -- */
+#underline {
+    width: 50vw;
+    height: 0.5vw;
+    background-color: yellow;
+}
+
+/* -- Text style -- */
+#content {
+    font-family: "Futura Medium", "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.5vw;
+    width: 85%;
+    height: 70%;
+    margin-top: 3vw;
+    overflow-y: auto;
+    color: white;
+    text-align: justify;
+}

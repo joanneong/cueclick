@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Cue Click, You Click</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet for Futura fonts -->
+    <link rel="stylesheet" type="text/css" href="../css/futuraFonts.css">
+
+    <!-- Stylesheet for  mobile site -->
+    <link rel="stylesheet" type="text/css" href="../css/mobileControlStyle.css">
+
+  </head>
+
+  <body>
+
+    <!-- Instructions for slides navigation -->
+    <div id="instructions">
+        <p>Swipe <b>left</b> to go to the previous slide.</p>
+
+        <p>Swipe <b>right</b> to go to the next slide.</p>
+    </div>
+
+    <!-- Display for presenter note -->
+    <div id="note">
+        <p id="slide-no"></p>
+        <p id="script"></p>
+    </div>
+
+    <!-- Script just to store the secret key from the server -->
+    <script> var webClientId = 'to replace'; </script>
+
+    <!-- Script for SOCKET.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Script for mobile controls -->
+    <script src="../js/mobileControl.js"></script>
+  </body>
+</html>

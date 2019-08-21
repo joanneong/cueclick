@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Cue Click, You Click</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet for Futura fonts -->
+    <link rel="stylesheet" type="text/css" href="../css/futuraFonts.css">
+
+    <!-- Stylesheet for  mobile login site -->
+    <link rel="stylesheet" type="text/css" href="../css/mobileStyle.css">
+
+  </head>
+
+  <body>
+
+    <div class="center">
+        <!-- Logo -->
+        <img id="logo" src="../img/newLogo.png" alt="cueclick logo">
+
+        <!-- Login element -->
+        <form class="login" action="/secretKey" method="post">
+            <p>Enter <i>your</i> secret key</p>
+            <div id="password">
+                <input type="password" id="pwd" name="secretKey" placeholder="ilovecueclick"
+                  autofocus autocomplete="off" required/>
+                <div id="showHide">
+                    <p id="show">show</p>
+                    <p id="hide">hide</p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Link to instructions page -->
+    <span id="help">
+        <a href="./infoPage" target="./infoPage">Help</a>
+    </span>
+
+    <!-- JavaScript file for password display when eye is pressed -->
+    <script src="../js/showPassword.js"></script>
+
+  </body>
+</html>

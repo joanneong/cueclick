@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cue Click, You Click</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet for Futura fonts -->
+    <link rel="stylesheet" type="text/css" href="../css/futuraFonts.css">
+
+    <!-- Imports the css for the homepage -->
+    <link rel="stylesheet" href="css/homePageStyle.css">
+  </head>
+
+  <body>
+    <!-- Add button for getting information on how to use CueClcik -->
+    <a href="./infoPage" target="./infoPage" id="info-button"><p>?</p></a>
+
+    <!--main elements in sign in page -->
+    <div id="center">
+      <img id="logo" src="../img/newLogo.png" alt="logo">
+      <p id="para">Get ready to control your Google Slides remotely</p>
+
+      <!-- Add buttons to initiate auth sequence -->
+      <span id="authorize-button"><p>Sign in</p></span>
+    </div>
+
+    <div id="side-buttons">
+
+          <!-- Add button for picking new presentation -->
+        <div id="new-presentation" onclick="openNewPresentation()" onmouseover="hoverP()" onmouseout="unhoverP()">
+            <img id="top-presentation" class="s-button" src="../img/newPresentHover.png" alt="newPresentationHover">
+            <img id="bottom-presentation" class="s-button" src="../img/newPresent.png" alt="newPresentation">
+        </div>
+
+        <!-- Add button for sign out -->
+        <div id="signout-button" onmouseover="hoverS()" onmouseout="unhoverS()">
+            <img id="top-button" class="s-button" src="../img/signoutButtonHover.png" alt="signoutButtonHover">
+            <img id="bottom-button" class="s-button" src="../img/signoutButton.png" alt="signoutButton">
+        </div>
+
+    </div>
+
+    <div id="slides">
+        <!-- Secret key and status display -->
+        <div id="key-and-status">
+            <span id="key">
+                <p class="top-bar-label">SECRET KEY:</p>
+                <span class="box" id="secret-box"><p id="secret"></p></span>
+            </span>
+            <span id="status">
+                <p class="top-bar-label">STATUS:</p>
+                <span class="box" id="status-box"><p id="synced">NOT SYNCED</p></span>
+            </span>
+        </div>
+
+        <!-- Iframe to display the chosen presentation -->
+        <iframe id="iframe" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+            <p>Sorry, there seems to be a problem :/
+                - Check if your browser can support iframes
+            </p>
+        </iframe>
+    </div>
+
+    <!-- Script for SOCKET.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Script for side buttons hovering effects -->
+    <script src="../js/sideButtonsEffects.js"></script>
+
+    <!-- Script for moving to next and previous slides -->
+    <script src="../js/webControls.js"></script>
+
+    <!-- General script for homePage -->
+    <!-- Only begin initializing homePage.js after google API has loaded -->
+    <!-- Script for selecting a presentation and displaying the presentation in an iframe -->
+    <script src="../js/homePage.js"></script>
+
+    <!-- Script for showing and hiding secret key -->
+    <script src="../js/showSecretKey.js"></script>
+
+    <!-- Script for Google API -->
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+  </body>
+</html>
