@@ -5,11 +5,8 @@
     - Sign out
     - Selection of new presentation
 */
-
-const config = require('config');
-
-const apiKey = config.get('apiKey');
-const clientId = config.get('clientId');
+const apiKey = process.env.API_KEY || apiKey;
+const clientId = process.env.CLIENT_ID || clientId;
 
 // Enter the API Discovery Docs that describes the APIs you want to access
 var discoveryDocs = ["https://slides.googleapis.com/$discovery/rest?version=v1"];
