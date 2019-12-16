@@ -6,11 +6,11 @@
     "config": "^3.2.4",
     "express": "^4.17.1",
     "express-static": "^1.2.6",
-    "express-validator": "^6.3.0",
+    "express-validator": "^5.3.1",
     "socket.io": "^2.3.0",
     "stream-replace": "^1.0.0",
     "bufferutil": "^4.0.1",
-    "utf-8-validate" : "^5.0.2"
+    "utf-8-validate": "^5.0.2"
   },
   "engines": {
     "node": "7.2.1"
