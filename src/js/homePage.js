@@ -5,9 +5,6 @@
     - Sign out
     - Selection of new presentation
 */
-const apiKey = process.env.API_KEY || apiKey;
-const clientId = process.env.CLIENT_ID || clientId;
-
 // Enter the API Discovery Docs that describes the APIs you want to access
 var discoveryDocs = ["https://slides.googleapis.com/$discovery/rest?version=v1"];
 // Enter one or more authorization scopes. Refer to the documentation for
@@ -35,6 +32,7 @@ var oauthToken;
 var pickerApiLoaded = false;
 var presentationId;
 var presentation;
+var clientId;
 
 
 function handleClientLoad() {
@@ -44,22 +42,39 @@ function handleClientLoad() {
     gapi.load('picker', onPickerApiLoad);
 }
 
+const getKeys = new Promise((resolve, reject) => {
+    // Create a new XMLHttpRequest to get the corresponding slides object
+    var xhr = new XMLHttpRequest(),
+        method = 'GET',
+        url = "http://localhost:8000/getKeys";
+        xhr.open(method, url, true);
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            resolve(JSON.parse(xhr.responseText));
+        }
+    }
+    xhr.send();
+});
+
 function initClient() {
-    gapi.auth2.init({
-        apiKey: apiKey,
-        discoveryDocs: discoveryDocs,
-        clientId: clientId,
-        scope: scopes
-    }).then(function () {
-      // Listen for sign-in state changes
-      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-      // Handle the initial sign-in state
-      updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      // Set the current Google User
-      gapi.auth2.getAuthInstance().currentUser.listen(updateUser);
-      authorizeButton.onclick = handleAuthClick;
-      signoutButton.onclick = handleSignoutClick;
-  });
+    getKeys
+    .then((data) => {
+        clientId = data.clientId;
+        gapi.auth2.init({
+            'discoveryDocs': discoveryDocs,
+            'clientId': data.clientId,
+            'scope': scopes
+        }).then(function () {
+            // Listen for sign-in state changes
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+            // Handle the initial sign-in state
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            // Set the current Google User
+            gapi.auth2.getAuthInstance().currentUser.listen(updateUser);
+            authorizeButton.onclick = handleAuthClick;
+            signoutButton.onclick = handleSignoutClick;
+        });
+    });
 }
 
 // Callback to make sure that the Picker API has loaded
@@ -84,10 +99,7 @@ function updateSigninStatus(isSignedIn) {
 function updateUser(gUser) {
     user = gUser;
     if (user != null && user != undefined) {
-        // If the user is a Google User, update the user token
-        if (user.Zi != null) {
-            updateToken();
-        }
+        updateToken();
     }
 }
 
@@ -127,7 +139,6 @@ function createPicker() {
       var picker = new google.picker.PickerBuilder().
         addView(view).
         setOAuthToken(oauthToken).
-        setDeveloperKey(apiKey).
         setCallback(pickerCallback).
         build();
       picker.setVisible(true);

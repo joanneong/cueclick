@@ -13,6 +13,8 @@ var app = express();
 var server  = require('http').Server(app);
 var io      = require('socket.io')(server);
 var static  = require('express-static');
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Import middleware for storing secret key on mobile end
 var fs = require('fs');
@@ -41,9 +43,14 @@ app.get('/favicon.ico', function(req, res) {
     res.sendFile(__dirname + '/favicon.ico');
 });
 
+app.get('/getKeys', (req, res) => {
+    res.send(JSON.stringify({ 
+        clientId: process.env.CLIENT_ID
+    }));
+})
+
 // Index route -- home page for website and mobile site
 app.get('/', function (req, res) {
-
     console.log("at /: " + JSON.stringify(req.body));
     // Basic user agent check - test for mobiles
     var userAgent = req.headers['user-agent'];
