@@ -13,7 +13,7 @@
     "utf-8-validate": "^5.0.2"
   },
   "engines": {
-    "node": "7.2.1"
+    "node": "14.3.0"
   },
   "description": "We hope to facilitate presentations by allowing users to refer to scripts and control slides remotely through their mobile devices.",
   "main": "index.js",
