@@ -46,7 +46,7 @@ const getKeys = new Promise((resolve, reject) => {
     // Create a new XMLHttpRequest to get the corresponding slides object
     var xhr = new XMLHttpRequest(),
         method = 'GET',
-        url = "http://localhost:8000/getKeys";
+        url = "https://cueclick.herokuapp.com/getKeys";
         xhr.open(method, url, true);
         xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
